@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Multiple Choice Test</title>
+        <link rel="stylesheet" href="normalize.css">   
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="print.css" media="print">            
+    </head>
+    <body>
+
+        <div id="dropzone">
+            <h2>DROP YOUR FILE HERE</h2>
+
+            <p>The file must be a CSV file with the following structure:</p> 
+            <code>
+                "A sample questions?";""
+                "";"Incorrect answer 1"
+                "x";"Correct answer 1"
+                "";"Incorrect answer 2"
+                "x";"Correct answer 2"
+            </code>
+        </div>
+
+        <main class="hide">
+            <nav>
+                <button data-action="print">Print</button>
+                <button data-action="toggle-answers">Toggle answers</button>
+                <button data-action="toggle-numbering">Toggle numbering</button>                
+                <button data-action="shuffle">Shuffle questions</button>
+                <button data-action="clear">Clear questions</button>
+            </nav>
+
+            <section class="mc-questions">
+            </section>    
+        </main>
+        
+        <script src="index.js"></script>
+        <script async src="papaparse.min.js"></script>
+    </body>
+</html>

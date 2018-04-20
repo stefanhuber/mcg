@@ -1,0 +1,20 @@
+@page {
+    margin:2.5cm;    
+}
+
+nav {
+    display:none !important;
+    visibility: hidden !important;
+}
+
+.mc-questions {
+    margin:0;
+    padding:0;
+    border:none;
+    width:auto;
+    max-width: auto;
+}
+
+.mc-question {
+    page-break-inside: avoid;
+}

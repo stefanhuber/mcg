@@ -1,0 +1,14 @@
+{
+  "name": "mcg",
+  "version": "1.0.0",
+  "description": " Multiple choice test generator for print",
+  "main": "index.js",
+  "scripts": {
+    "start": "ecstatic ./docs --port 8080"
+  },
+  "author": "",
+  "license": "BSD-2",
+  "devDependencies": {
+    "ecstatic": "^3.2.0"
+  }
+}
