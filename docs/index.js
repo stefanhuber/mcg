@@ -31,6 +31,20 @@ var parse = function(file, callback) {
     }); 
 };
 
+var unparse = function() {
+    var data = [];
+    var questions = JSON.parse(localStorage.getItem('mc-questions'));
+
+    questions.forEach(function(q) {
+        data.push([q.question, '']);
+        q.answers.forEach(function(a) {
+            data.push(a);
+        });
+    });
+
+    return Papa.unparse(data);
+};
+
 var transformInput = function(input) {
     if (Array.isArray(input)) {
         var items = [];
@@ -94,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var questions = JSON.parse(localStorage.getItem('mc-questions'));
             localStorage.setItem('mc-questions', JSON.stringify(shuffleQuestions(questions))); 
             init();
+        } else if (e.target.dataset.action == 'export') {
+            window.open('data:text/csv;charset=utf-8,' + encodeURI(unparse()));
         }
     });
 
